@@ -19,8 +19,8 @@ class SaleResource extends JsonResource
             'id' => $this->id,
             'client' => $this->client,
             'total' =>  $this->total,
-            // 'products' => $this->products,
             'details' => new ProductSaleCollection( ProductSale::where('sale_id', $this->id)->get() ),
+            'createdAt' => $this->created_at,
         ];
     }
 }
